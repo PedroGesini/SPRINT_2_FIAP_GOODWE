@@ -1,0 +1,19 @@
+server:
+  port: 8080
+  servlet:
+    context-path: '/ev-charge-ops/'
+
+spring:
+  datasource:
+    url:  jdbc:postgresql://localhost:5432/ev-charge-ops
+    username: postgres
+    password: password
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non-contextual-creation: true
