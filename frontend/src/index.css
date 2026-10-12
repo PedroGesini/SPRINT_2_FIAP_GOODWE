@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+  font-family:'DM Sans',sans-serif;
+  color:#f3f4f6;
+  background:
+    radial-gradient(circle at top right, rgba(255,23,79,.12), transparent 25%),
+    radial-gradient(circle at bottom left, rgba(37,99,235,.08), transparent 28%),
+    #05070b;
+  font-synthesis:none;
+}
+*{box-sizing:border-box}
+html,body,#root{min-height:100%}
+body{margin:0;min-width:320px;background:transparent;color:#f3f4f6}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+button:disabled{opacity:.58;cursor:not-allowed}
+a{text-decoration:none;color:inherit}
+
+.tech-grid{
+  background-image:
+    linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+  background-size:42px 42px;
+}
+
+.login-hero{background:#020409}
+.login-hero-image{
+  position:absolute; inset:0;
+  background-image:url('/login-ev-car.webp');
+  background-size:cover;
+  background-position:78% center;
+  filter:saturate(1.05) contrast(1.05);
+  transform:scale(1.02);
+}
+.login-hero-overlay{
+  position:absolute; inset:0;
+  background:
+    linear-gradient(90deg, rgba(3,5,8,.70) 0%, rgba(3,5,8,.54) 35%, rgba(3,5,8,.30) 75%, rgba(3,5,8,.60) 100%),
+    radial-gradient(circle at 70% 20%, rgba(59,130,246,.18), transparent 28%),
+    radial-gradient(circle at 18% 70%, rgba(255,23,79,.16), transparent 26%);
+}
+.login-panel{
+  border-radius:34px;
+  border:1px solid rgba(255,255,255,.08);
+  background:linear-gradient(180deg, rgba(3,5,8,.98), rgba(4,6,9,.96));
+  padding:54px 46px 34px;
+  box-shadow:0 24px 60px rgba(0,0,0,.42), inset 0 1px 0 rgba(255,255,255,.03);
+}
+.login-field{
+  width:100%;
+  border-radius:18px;
+  background:#eef2fb;
+  border:1px solid rgba(255,255,255,.08);
+  padding:18px 16px;
+  color:#0f172a;
+  font-size:1rem;
+  font-weight:500;
+  outline:none;
+  transition:.2s ease;
+}
+.login-field:focus{box-shadow:0 0 0 4px rgba(255,23,79,.14);border-color:#ff174f}
+.login-submit{
+  @apply inline-flex items-center justify-between gap-2 rounded-2xl px-6 py-4 text-base font-extrabold text-white transition-all;
+  background:linear-gradient(90deg, #ff174f 0%, #ff215d 100%);
+  box-shadow:0 14px 34px rgba(255,23,79,.26);
+}
+.login-submit:hover{transform:translateY(-1px);filter:brightness(1.05)}
+.login-secondary{
+  border-radius:16px;
+  padding:12px 18px;
+  border:1px solid rgba(59,130,246,.3);
+  color:#b9d2ff;
+  background:rgba(6,18,42,.4);
+  font-weight:700;
+}
+.login-secondary:hover{background:rgba(8,24,56,.55)}
+.demo-link{
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  width:100%;text-align:left;padding:.9rem 1rem;border-radius:16px;
+  background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);
+}
+.demo-link:hover{background:rgba(255,255,255,.04)}
+.demo-link span:first-child{font-weight:800;color:#fff}
+.demo-link span:last-child{font-size:.9rem;color:#cbd5e1}
+
+.panel{
+  @apply rounded-[24px] shadow-sm;
+  background:linear-gradient(180deg,rgba(10,12,18,.98),rgba(8,10,15,.96));
+  border:1px solid rgba(255,255,255,.06);
+  box-shadow:0 12px 32px rgba(0,0,0,.32), inset 0 1px 0 rgba(255,255,255,.02);
+  backdrop-filter:blur(14px);
+}
+.btn{@apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-bold transition-all}
+.btn-primary{
+  @apply btn text-white;
+  background:linear-gradient(135deg,#dc2626,#ff174f);
+  box-shadow:0 10px 22px rgba(255,23,79,.22);
+}
+.btn-primary:hover{transform:translateY(-1px);filter:brightness(1.05)}
+.btn-soft{
+  @apply btn;
+  color:#fbcfe8;
+  background:rgba(255,23,79,.08);
+  border:1px solid rgba(255,23,79,.12);
+}
+.btn-soft:hover{background:rgba(255,23,79,.14)}
+.field{
+  @apply w-full rounded-xl px-3 py-2.5 text-sm outline-none;
+  background:#0b0f15;
+  border:1px solid #202532;
+  color:#f3f4f6;
+}
+.field::placeholder{color:#6b7280}
+.field:focus{border-color:#ff174f;box-shadow:0 0 0 4px rgba(255,23,79,.12)}
+.muted{@apply text-sm text-slate-400}
+.section-title{@apply text-[17px] font-extrabold text-slate-100}
+.table-wrap{overflow:auto}
+.table{width:100%;border-collapse:collapse;text-align:left;white-space:nowrap}
+.table th{font-size:11px;letter-spacing:.08em;text-transform:uppercase;background:#090c12;color:#94a3b8;font-weight:800}
+.table th,.table td{padding:15px 18px;border-bottom:1px solid #1f2430}
+.table td{font-size:13px;color:#e5e7eb}
+.table tr:last-child td{border-bottom:0}
+.table tr:hover td{background:rgba(255,255,255,.015)}
+.pill{display:inline-block;padding:5px 9px;border-radius:999px;background:rgba(59,130,246,.1);color:#bfdbfe;font-size:11px;font-weight:800;border:1px solid rgba(59,130,246,.15)}
+.pill-warn{background:rgba(245,158,11,.14);color:#fcd34d;border:1px solid rgba(245,158,11,.18)}
+.pill-bad{background:rgba(255,23,79,.14);color:#fda4af;border:1px solid rgba(255,23,79,.2)}
+.sidebar-link{@apply flex w-full items-center gap-3 rounded-xl px-4 py-3 text-sm font-semibold text-slate-400 transition-all hover:bg-[#10151e] hover:text-slate-100}
+.sidebar-link.active{background:linear-gradient(90deg,rgba(255,23,79,.16),rgba(59,130,246,.08));color:#fff;border:1px solid rgba(255,255,255,.07);box-shadow:inset 0 1px 0 rgba(255,255,255,.02)}
+.scrollbar::-webkit-scrollbar{width:6px;height:6px}
+.scrollbar::-webkit-scrollbar-thumb{background:#3f3f46;border-radius:10px}
+.scrollbar::-webkit-scrollbar-track{background:transparent}
+.hero-tech{
+  border:1px solid rgba(255,255,255,.07);
+  border-radius:30px;
+  background:
+    linear-gradient(135deg,rgba(255,23,79,.18),rgba(5,7,11,.98) 38%, rgba(14,26,51,.98) 100%),
+    radial-gradient(circle at top right, rgba(255,255,255,.05), transparent 25%);
+  box-shadow:0 20px 40px rgba(0,0,0,.32);
+}
+.tech-kicker{display:inline-flex;align-items:center;gap:.45rem;color:#fda4af;font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.18em}
+.chip-red{display:inline-flex;align-items:center;gap:.4rem;padding:.55rem .85rem;border-radius:999px;background:rgba(255,23,79,.12);color:#fecdd3;border:1px solid rgba(255,255,255,.08);font-size:.72rem;font-weight:800;letter-spacing:.03em}
+.tech-mini-card,.tech-note,.list-card{background:#0a0e14;border:1px solid rgba(255,255,255,.06)}
+.tech-mini-card{padding:1rem;border-radius:18px}
+.mini-label{font-size:.72rem;font-weight:800;color:#fda4af;text-transform:uppercase;letter-spacing:.08em}
+.mini-value{margin-top:.35rem;font-size:1rem;font-weight:800;color:#f3f4f6}
+.mini-note{margin-top:.35rem;font-size:.78rem;color:#94a3b8}
+.tech-note{display:flex;align-items:flex-start;gap:.55rem;padding:.8rem .95rem;border-radius:16px;color:#d1d5db;font-size:.83rem}
+.list-card{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.95rem 1rem;border-radius:18px}
+
+@media (max-width: 768px){
+  .login-panel{padding:34px 22px 26px;border-radius:24px}
+  .login-field{padding:16px 14px;border-radius:14px}
+}
+
+/* Hero compacto em celulares e tablets; mantém o veículo visível também fora do desktop. */
+.mobile-login-art{
+  height:210px;
+  border-radius:24px;
+  border:1px solid rgba(255,255,255,.12);
+  background:
+    linear-gradient(180deg,rgba(3,5,8,.04),rgba(3,5,8,.36)),
+    url('/login-ev-car.webp') 73% 60% / cover no-repeat;
+  box-shadow:0 18px 32px rgba(0,0,0,.3);
+}
+@media (max-width: 480px){.mobile-login-art{height:165px;border-radius:18px}}
+
+/* Copiloto ChargeAI — drawer tecnológico e visualizações em tempo real */
+.copilot-drawer{background:linear-gradient(155deg,#0d111b,#070a10 35%,#05070d 100%);border-left:1px solid rgba(255,255,255,.09);box-shadow:-20px 0 65px rgba(0,0,0,.58)}
+.copilot-header{background:linear-gradient(110deg,#151827,#0b0f18);border-bottom:1px solid rgba(255,255,255,.06)}
+.copilot-logo{display:grid;place-items:center;width:46px;height:46px;flex-shrink:0;border-radius:15px;color:#ff456e;background:rgba(255,23,79,.10);border:1px solid rgba(255,23,79,.25)}
+.copilot-online{display:flex;align-items:center;gap:5px;border:1px solid rgba(52,211,153,.15);color:#6ee7b7;background:rgba(16,185,129,.08);padding:4px 7px;border-radius:999px;font-size:8px;font-weight:900;letter-spacing:.08em}
+.copilot-online span{height:5px;width:5px;background:#34d399;border-radius:50%;box-shadow:0 0 8px #34d399}
+.copilot-icon-btn{width:32px;height:32px;border-radius:10px;display:grid;place-items:center;color:#94a3b8;background:rgba(255,255,255,.035)}
+.copilot-icon-btn:hover{color:white;background:rgba(255,255,255,.07)}
+.copilot-top-strip{display:flex;align-items:center;gap:8px;padding:10px 23px;background:rgba(255,23,79,.065);border-bottom:1px solid rgba(255,23,79,.08);font-size:10px;color:#cbd5e1}
+.copilot-top-strip svg{color:#fb7185;flex-shrink:0}
+.copilot-tab{display:flex;align-items:center;justify-content:center;gap:8px;flex:1;padding:11px 8px;border:1px solid transparent;border-radius:12px;color:#94a3b8;font-size:12px;font-weight:800}
+.copilot-tab.active{color:#fff;border-color:rgba(255,255,255,.07);background:#121824}
+.copilot-scroll{scrollbar-width:thin;scrollbar-color:#262d39 transparent}
+.copilot-message{display:flex;align-items:flex-start;gap:10px}
+.copilot-message.from-user{margin-left:12%;justify-content:flex-end}
+.copilot-avatar{display:grid;place-items:center;flex-shrink:0;height:30px;width:30px;border-radius:11px;background:rgba(255,23,79,.11);border:1px solid rgba(255,23,79,.18);color:#ff3768}
+.copilot-assistant-bubble,.copilot-user-bubble{white-space:pre-wrap;line-height:1.65;font-size:13px;padding:12px 14px;word-break:break-word}
+.copilot-assistant-bubble{color:#dbe2ee;background:linear-gradient(160deg,#131927,#101521);border:1px solid rgba(255,255,255,.055);border-radius:5px 16px 16px 16px}
+.copilot-user-bubble{background:linear-gradient(135deg,#d70d40,#ff174f);border-radius:16px 16px 4px 16px;color:white;box-shadow:0 8px 28px rgba(255,23,79,.13)}
+.copilot-metrics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+.copilot-metric{padding:11px 12px;background:#0a101a;border:1px solid #202634;border-radius:13px;min-width:0}
+.copilot-metric p{font-size:10px;line-height:1.4;color:#94a3b8}
+.copilot-metric strong{display:block;margin-top:5px;color:white;font-size:14px;font-weight:900;overflow-wrap:anywhere}
+.copilot-chart,.copilot-action{padding:13px;background:#0b101a;border:1px solid rgba(255,255,255,.07);border-radius:16px}
+.copilot-charger{background:#0a101a;border:1px solid #202634;padding:11px 13px;border-radius:13px;transition:border-color .15s}
+.copilot-charger:hover{border-color:rgba(255,23,79,.4)}
+.copilot-status-dot{height:7px;width:7px;border-radius:100%;background:#64748b;flex-shrink:0}
+.copilot-status-dot.is-available{background:#22c55e;box-shadow:0 0 8px rgba(34,197,94,.5)}
+.copilot-status-dot.is-busy{background:#f59e0b}
+.copilot-status-dot.is-offline{background:#fb7185}
+.copilot-action{border-color:rgba(255,23,79,.24);background:rgba(255,23,79,.045)}
+.copilot-confirm,.copilot-cancel{padding:9px 12px;border-radius:11px;font-size:11px;font-weight:900;display:inline-flex;align-items:center;justify-content:center;gap:5px}
+.copilot-confirm{background:#ff174f;color:white}
+.copilot-cancel{border:1px solid #2a303d;color:#cbd5e1}
+.copilot-action-ok{margin-top:12px;display:flex;align-items:center;gap:6px;font-size:12px;font-weight:bold;color:#6ee7b7}
+.copilot-example,.copilot-shortcut{display:flex;align-items:center;gap:9px;text-align:left;font-size:12px;font-weight:600;color:#cbd5e1;border:1px solid rgba(255,255,255,.08);border-radius:12px;background:rgba(255,255,255,.025);padding:11px 13px;width:100%}
+.copilot-example:hover,.copilot-shortcut:hover{border-color:rgba(255,23,79,.3);background:rgba(255,23,79,.055)}
+.copilot-example svg{color:#ff3768;flex-shrink:0}
+.copilot-shortcut{justify-content:space-between}
+.copilot-shortcut svg{color:#ff3768;flex-shrink:0}
+.copilot-tip{display:flex;align-items:flex-start;gap:13px;border:1px solid rgba(255,23,79,.16);border-radius:16px;padding:16px;background:rgba(255,23,79,.04)}
+.copilot-compose{padding:17px 20px 20px;background:#090d15;border-top:1px solid rgba(255,255,255,.06)}
+.copilot-input-box{border-radius:17px;display:flex;align-items:end;gap:7px;border:1px solid #2b3241;padding:9px 10px 9px 14px;background:#121824}
+.copilot-input-box:focus-within{border-color:#ff174f;box-shadow:0 0 0 3px rgba(255,23,79,.07)}
+.copilot-input-box textarea{background:transparent;resize:none;outline:none;color:white;flex:1;line-height:1.55;min-height:35px;max-height:110px;padding:6px 0;font-size:12px}
+.copilot-input-box textarea::placeholder{color:#778399}
+.copilot-input-box button{display:grid;place-items:center;width:34px;height:34px;border-radius:12px;background:#ff174f;color:white;flex-shrink:0}
+.copilot-input-box button:disabled{opacity:.35}
+@media (max-width: 480px){.copilot-drawer{max-width:100%}.copilot-metrics{grid-template-columns:1fr 1fr}.copilot-compose{padding:12px}.copilot-header{padding:16px}.copilot-assistant-bubble,.copilot-user-bubble{font-size:12px}}
+
+/* Modais do painel: coerência de contraste com a interface escura.
+   O estilo de autofill evita campos claros gerados pelo navegador. */
+.form-dialog label{color:#e5e7eb}
+.form-dialog .field{color:#f8fafc;background:#10151e;border-color:#283040}
+.form-dialog .field:focus{border-color:#ff174f;box-shadow:0 0 0 3px rgba(255,23,79,.16)}
+.form-dialog input:-webkit-autofill,
+.form-dialog input:-webkit-autofill:hover,
+.form-dialog input:-webkit-autofill:focus{
+  -webkit-box-shadow:0 0 0 1000px #10151e inset !important;
+  -webkit-text-fill-color:#f8fafc !important;
+  caret-color:#f8fafc;
+}
