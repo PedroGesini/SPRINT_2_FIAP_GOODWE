@@ -208,6 +208,19 @@ flowchart LR
 | Exportação | CSV para sessões e ReportLab para PDFs de faturas |
 | Qualidade | Testes pytest para API, OCPP, faturamento e IA |
 
+## Desvios entre Sprint 1 e Sprint 2
+
+Esta seção compara o planejamento da Sprint 1 com o protótipo implementado na Sprint 2.
+
+| Planejado na Sprint 1 | Implementado na Sprint 2 | Motivo / decisão da equipe |
+|---|---|---|
+| Integração com os dados do GoodWe HCA G2 pelo SEMS Portal/API GoodWe. | O protótipo oferece um gateway OCPP 1.6J e um simulador. Não há integração confirmada com o SEMS Portal nem homologação com carregador GoodWe físico. | **Desvio de integração:** o desenvolvimento concentrou-se num fluxo OCPP demonstrável sem depender de acesso à API ou ao equipamento. Isso permite validar a recepção de sessões, medições e RFID, mas não comprova compatibilidade com HCA G2 nem substitui a integração SEMS planejada. A validação física e de API permanece pendente. |
+| Clustering K-Means como abordagem prioritária, com possibilidade de influenciar o rateio ou personalizar a comunicação. | O sistema aplica K-Means aos dados de consumo para exibir perfis; com poucos moradores, usa tercis e informa essa alternativa. Os clusters não alteram a cobrança. | **Ajuste de escopo e transparência:** manter a cobrança baseada em kWh efetivamente consumido evita introduzir um multiplicador por perfil que tornaria a fatura menos explicável. O clustering foi mantido como apoio à análise do gestor. Usar perfis para modular o rateio exigiria uma regra explícita, validação e comunicação aos moradores; essa parte não foi implementada. |
+| Sinalizar anomalias para revisão do gestor antes de incorporá-las ao rateio, sem bloqueio automático. | O sistema detecta e apresenta sessões atípicas como alertas, mas não há etapa obrigatória de revisão no fluxo de faturamento. | **Desvio funcional relevante:** a detecção apoia a análise e apresenta razões, sem afirmar que uma sessão é fraude ou erro. A revisão humana antes de faturar ainda não é garantida. Uma etapa de aprovação reduziria o risco de cobrar medição atípica, mas ficou pendente; hoje o alerta não deve ser interpretado como bloqueio ou validação da fatura. |
+| Previsão de consumo como abordagem de menor prioridade, condicionada ao tempo e à disponibilidade de histórico. | Foi implementada previsão mensal indicativa; a escolha do método depende do histórico e há retroteste quando existem meses suficientes. | **Ampliação do protótipo:** a previsão complementa os indicadores do gestor e demonstra uma terceira aplicação analítica prevista na pesquisa. Como a base é simulada e limitada, o resultado é tratado como estimativa, não garantia. Para uso operacional seriam necessários dados reais e avaliação continuada. |
+| PostgreSQL indicado como banco transacional da solução. | O SQLite é usado por padrão no desenvolvimento; PostgreSQL é configurável. | **Simplificação para execução local:** SQLite reduz a configuração necessária para instalar e demonstrar o protótipo. A persistência usa SQLAlchemy e mantém opção de PostgreSQL, mais adequada a uma implantação compartilhada. O banco padrão não valida concorrência ou disponibilidade de produção. |
+| Balanceamento dinâmico de carga citado como necessidade para reduzir risco de sobrecarga elétrica. | O protótipo não demonstra controle ou balanceamento de potência entre carregadores. | **Fora do escopo validado:** há registro e apresentação de estado/telemetria, mas não controle de potência nem homologação com hardware. O balanceamento seguro depende de limites elétricos do local, telemetria confiável e comandos compatíveis. O protótipo não deve ser tratado como sistema de segurança elétrica. |
+
 ### Organização do repositório
 
 ```text
