@@ -151,7 +151,6 @@ Quais são as anomalias detectadas?
 
 As **ações suportadas** exigem confirmação explícita, com nova validação de identidade e permissão no backend. O copiloto não recebe acesso direto a SQL nem autoridade irrestrita sobre carregadores físicos.
 
-[Documentação detalhada do ChargeAI](README_COPILOTO.md)
 
 ### 10 · Sincronização entre perfis
 
